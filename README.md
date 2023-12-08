@@ -1,5 +1,5 @@
 # c11-chatgpt
-An introduction to the ChatGPT API. Recreate this repository as a tutorial!
+An introduction to the ChatGPT API. Use this repository as a tutorial!
 
 ## Setup
 
