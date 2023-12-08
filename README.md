@@ -98,7 +98,7 @@ Read the [Chat Completions API](https://platform.openai.com/docs/guides/text-gen
 
 #### Example usage:
 ```
-c11-chatgpt % node index.js "Can you give me the history of the Turing Test?"
+c11-chatgpt % node chat.js "Can you give me the history of the Turing Test?"
 GPT: The Turing Test, proposed by the British mathematician and computer scientist Alan Turing in 1950, ...
 ```
 
