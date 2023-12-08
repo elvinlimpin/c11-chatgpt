@@ -91,10 +91,16 @@ Edit the code to add `process.argv[2]`, which is the first input on the command 
 
 Read the [Chat Completions API](https://platform.openai.com/docs/guides/text-generation/chat-completions-api) to determine how to add a new message to your current completion.
 
-#### Hint
+#### Solution Hint
 ```
 {"role": "user", "content": process.argv[2]}
 ```
 
+#### Example usage:
+```
+c11-chatgpt % node index.js "Can you give me the history of the Turing Test?"
+GPT: The Turing Test, proposed by the British mathematician and computer scientist Alan Turing in 1950, ...
+```
+
 ## Exercise 3
-Train your model to provide sarcastic responses. Learn more on the [Fine Tuning API](https://platform.openai.com/docs/guides/fine-tuning). Have fun!
+Train your model to provide sarcastic responses. Learn more on the [Fine Tuning API](https://platform.openai.com/docs/guides/fine-tuning) document. Have fun!
