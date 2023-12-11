@@ -1,7 +1,7 @@
 # no cheating!
 package.json
 package-lock.json
-chat.js
+assistant.js
 
 # Logs
 logs

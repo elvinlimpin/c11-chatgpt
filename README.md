@@ -1,5 +1,7 @@
-# c11-chatgpt
-An introduction to the ChatGPT API. Use this repository as a tutorial!
+# AI Coding Assistant
+This tutorial introduces the learner to the ChatGPT API by walking through how to make an AI Coding Assistant.
+
+Use this repository for the tutorial!
 
 ## Setup
 
@@ -48,6 +50,9 @@ const openai = new OpenAI()
 
 
 ## Exercise 1
+For exercise 1, we will run the setup and test our integration to the ChatGPT API.
+
+### File contents
 Complete the setup and create the following file:
 ```
 import dotenv from "dotenv"
@@ -60,6 +65,8 @@ const openai = new OpenAI({
 })
 
 async function main() {
+  console.log("Assistant is typing...")
+  console.log()
   const completion = await openai.chat.completions.create({
     messages: [{ role: "system", content: "You are a helpful assistant." }],
     model: "gpt-3.5-turbo",
@@ -71,19 +78,42 @@ async function main() {
 main()
 ```
 
+### Additional Setup
+Name the above file `assistant.js`.
+Change the main property in `package.json` to `"main":"assistant.js"`.
+
+### Checkpoint 1.1
 Run the file using the following command:
 ```
-node openai-test.js
+node assistant.js
 ```
+When running the test command, the output be similar to the following output:
+```
+Assistant is typing...
+
+{
+  id: 'chatcmpl-8UTWRUDVWX6IZXMTrTCqDv6H0DGC0',
+  object: 'chat.completion',
+  created: 1702274015,
+  model: 'gpt-3.5-turbo-0613',
+  choices: [ { index: 0, message: [Object], finish_reason: 'stop' } ],
+  usage: { prompt_tokens: 13, completion_tokens: 7, total_tokens: 20 },
+  system_fingerprint: null
+}
+```
+### Refining output / Checkpoint 1.2
+Edit the console log such that the output is only the response like so:
+```
+c11-chatgpt % node assistant.js
+Assistant is typing...
+
+How can I assist you today?
+```
+_Output may vary_
 
 ## Exercise 2
 
-### Refining output
-Edit the console log such that the output is only the response like so:
-```
-GPT: How can I assist you today?
-```
-Make sure to add `GPT: ` before the response.
+Now that we have are using the ChatGPT API, let's extend the application so that it takes user input. For exercise 2, we will pass in code which we want ChatGPT to analyze.
 
 ### Implementing user input
 We will be implementing user input using the cli.
@@ -95,12 +125,61 @@ Read the [Chat Completions API](https://platform.openai.com/docs/guides/text-gen
 ```
 {"role": "user", "content": process.argv[2]}
 ```
+_Output may vary_
 
-#### Example usage:
+#### Checkpoint 2.1
+Your app should take user input, but not specifically as a coding assistant.
 ```
-c11-chatgpt % node chat.js "Can you give me the history of the Turing Test?"
-GPT: The Turing Test, proposed by the British mathematician and computer scientist Alan Turing in 1950, ...
+c11-chatgpt % node assistant.js "Can you give me the history of the Turing Test?"
+Assistant is typing...
+
+The Turing Test, proposed by the British mathematician and computer scientist Alan Turing in 1950, ...
 ```
+_Output may vary_
+
+### Adding system input
+You can add or change system input to the chat in order to specify that you are looking for coding assistance.
+
+Again, you may refer to [Chat Completions API](https://platform.openai.com/docs/guides/text-generation/chat-completions-api) if you get stuck.
+
+### Checkpoint 2.2
+The app should take user input which it interprets as javascript code. If there is no error, the app should say just that. If there is a possible error, the app should respond with the solution.
+
+```
+c11-chatgpt % node assistant.js "function sayHelloWorld() { console.log('hello world') }; sayHelloWorld()"
+Assistant is typing...
+
+There is no error in the provided code.
+```
+_Output may vary_
 
 ## Exercise 3
-Train your model to provide sarcastic responses. Learn more on the [Fine Tuning API](https://platform.openai.com/docs/guides/fine-tuning) document. Have fun!
+Passing in code as a string is only a small fraction of what you can do with the ChatGPT API as a coding assistant. Ideally, we want to be able to pass in file contents.
+
+### Passing in sample code using fs
+Let's use node's `fs` module to read the file URL you pass as input. Learn more using this [link](https://www.geeksforgeeks.org/node-js-fs-readfilesync-method/). Or, you know... Use chatGPT to help you.
+
+### Checkpoint 3.1
+```
+c11-chatgpt % node assistant.js sampleCode.js
+Assistant is typing...
+
+There is no error in the provided code.
+```
+_Output may vary_
+
+### Bringing user input back / Checkpoint 3.2
+You may want to provide further context for your code. Implement the below functionality:
+```
+c11-chatgpt % node assistant2.js sampleCode.js "If there's no error, please let me know what I need to do to export the sayHelloWorld function to another file."
+Assistant is typing...
+
+To export the `sayHelloWorld` function to another file, you can use ...
+```
+_Output may vary_
+
+Refer to [Chat Completions API](https://platform.openai.com/docs/guides/text-generation/chat-completions-api) if you get stuck.
+
+
+### Extra Spicy
+Train your model to talk like a caveman. Learn more on the [Fine Tuning API](https://platform.openai.com/docs/guides/fine-tuning) document. Have fun!
