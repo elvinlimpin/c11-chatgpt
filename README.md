@@ -39,6 +39,7 @@ Add the following line within `package.json`:
     "type": "module"
 }
 ```
+This allows you to use the import syntax present on the following section.
 
 ### Using the import
 Import the openai package using the following lines on a js file.
@@ -87,7 +88,7 @@ Run the file using the following command:
 ```
 node assistant.js
 ```
-When running the test command, the output be similar to the following output:
+When running the test command, the output should be similar to the following output:
 ```
 Assistant is typing...
 
@@ -102,18 +103,18 @@ Assistant is typing...
 }
 ```
 ### Refining output / Checkpoint 1.2
-Edit the console log such that the output is only the response like so:
+Edit the console log such that the message from ChatGPT is the only response like so:
 ```
 c11-chatgpt % node assistant.js
 Assistant is typing...
 
 How can I assist you today?
 ```
-_(Output may vary)_
+_(Assistant output may vary)_
 
 ## Exercise 2
 
-Now that we have are using the ChatGPT API, let's extend the application so that it takes user input. For exercise 2, we will pass in code which we want ChatGPT to analyze.
+Now that we have are using the ChatGPT API, let's extend the app so that it takes user input. For exercise 2, we will pass in code which we want ChatGPT to analyze.
 
 ### Implementing user input
 We will be implementing user input using the cli.
@@ -125,7 +126,6 @@ Read the [Chat Completions API](https://platform.openai.com/docs/guides/text-gen
 ```
 {"role": "user", "content": process.argv[2]}
 ```
-_(Output may vary)_
 
 #### Checkpoint 2.1
 Your app should take user input, but not specifically as a coding assistant.
@@ -133,9 +133,9 @@ Your app should take user input, but not specifically as a coding assistant.
 c11-chatgpt % node assistant.js "Can you give me the history of the Turing Test?"
 Assistant is typing...
 
-The Turing Test, proposed by the British mathematician and computer scientist Alan Turing in 1950, ...
+The Turing Test, proposed by the British mathematician and computer scientist Alan Turing...
 ```
-_(Output may vary)_
+_(Assistant output may vary)_
 
 ### Adding system input
 You can add or change system input to the chat in order to specify that you are looking for coding assistance.
@@ -151,13 +151,13 @@ Assistant is typing...
 
 There is no error in the provided code.
 ```
-_(Output may vary)_
+_(Assistant output may vary)_
 
 ## Exercise 3
 Passing in code as a string is only a small fraction of what you can do with the ChatGPT API as a coding assistant. Ideally, we want to be able to pass in file contents.
 
 ### Passing in sample code using fs
-Let's use node's `fs` module to read the file URL you pass as input. Learn more using this [link](https://www.geeksforgeeks.org/node-js-fs-readfilesync-method/). Or, you know... Use chatGPT to help you.
+Let's use node's `fs` module to read the file URL you pass as input. Learn more using this [documentation](https://www.geeksforgeeks.org/node-js-fs-readfilesync-method/). Or, you know... Use ChatGPT to help you.
 
 #### Checkpoint 3.1
 ```
@@ -166,23 +166,23 @@ Assistant is typing...
 
 There is no error in the provided code.
 ```
-_(Output may vary)_
+_(Assistant output may vary)_
 
 ### Bringing user input back / Checkpoint 3.2
-You may want to provide further context for your code. Implement the below functionality:
+You may want to provide further context for your code. Implement the functionality below:
 ```
 c11-chatgpt % node assistant2.js sampleCode.js "If there's no error, please let me know what I need to do to export the sayHelloWorld function to another file."
 Assistant is typing...
 
 To export the `sayHelloWorld` function to another file, you can use ...
 ```
-_(Output may vary)_
+_(Assistant output may vary)_
 
 Refer to [Chat Completions API](https://platform.openai.com/docs/guides/text-generation/chat-completions-api) if you get stuck.
 
 
 ### Extra Spicy Challenge
-Want an extra challenge? Train your model to talk like a caveman, and make caveman analogies. Learn more on the [Fine Tuning API](https://platform.openai.com/docs/guides/fine-tuning) document. Have fun!
+Want an extra challenge? Train your model to talk like a caveman, and make caveman analogies. Learn more on the [Fine Tuning API](https://platform.openai.com/docs/guides/fine-tuning) documention. Have fun!
 
 # Further Reading
 * [Article on a Caveman Coding Assistant built using ChatGPT](https://medium.com/bacic/grug-dev-gpt-answers-most-popular-questions-on-stackoverflow-5c2b8dbc2394)
