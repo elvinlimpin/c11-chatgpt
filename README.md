@@ -109,7 +109,7 @@ Assistant is typing...
 
 How can I assist you today?
 ```
-_Output may vary_
+_(Output may vary)_
 
 ## Exercise 2
 
@@ -125,7 +125,7 @@ Read the [Chat Completions API](https://platform.openai.com/docs/guides/text-gen
 ```
 {"role": "user", "content": process.argv[2]}
 ```
-_Output may vary_
+_(Output may vary)_
 
 #### Checkpoint 2.1
 Your app should take user input, but not specifically as a coding assistant.
@@ -135,14 +135,14 @@ Assistant is typing...
 
 The Turing Test, proposed by the British mathematician and computer scientist Alan Turing in 1950, ...
 ```
-_Output may vary_
+_(Output may vary)_
 
 ### Adding system input
 You can add or change system input to the chat in order to specify that you are looking for coding assistance.
 
 Again, you may refer to [Chat Completions API](https://platform.openai.com/docs/guides/text-generation/chat-completions-api) if you get stuck.
 
-### Checkpoint 2.2
+#### Checkpoint 2.2
 The app should take user input which it interprets as javascript code. If there is no error, the app should say just that. If there is a possible error, the app should respond with the solution.
 
 ```
@@ -151,7 +151,7 @@ Assistant is typing...
 
 There is no error in the provided code.
 ```
-_Output may vary_
+_(Output may vary)_
 
 ## Exercise 3
 Passing in code as a string is only a small fraction of what you can do with the ChatGPT API as a coding assistant. Ideally, we want to be able to pass in file contents.
@@ -159,14 +159,14 @@ Passing in code as a string is only a small fraction of what you can do with the
 ### Passing in sample code using fs
 Let's use node's `fs` module to read the file URL you pass as input. Learn more using this [link](https://www.geeksforgeeks.org/node-js-fs-readfilesync-method/). Or, you know... Use chatGPT to help you.
 
-### Checkpoint 3.1
+#### Checkpoint 3.1
 ```
 c11-chatgpt % node assistant.js sampleCode.js
 Assistant is typing...
 
 There is no error in the provided code.
 ```
-_Output may vary_
+_(Output may vary)_
 
 ### Bringing user input back / Checkpoint 3.2
 You may want to provide further context for your code. Implement the below functionality:
@@ -176,10 +176,10 @@ Assistant is typing...
 
 To export the `sayHelloWorld` function to another file, you can use ...
 ```
-_Output may vary_
+_(Output may vary)_
 
 Refer to [Chat Completions API](https://platform.openai.com/docs/guides/text-generation/chat-completions-api) if you get stuck.
 
 
-### Extra Spicy
-Train your model to talk like a caveman. Learn more on the [Fine Tuning API](https://platform.openai.com/docs/guides/fine-tuning) document. Have fun!
+### Extra Spicy Challenge
+Want an extra challenge? Train your model to talk like a caveman, and make caveman analogies. Learn more on the [Fine Tuning API](https://platform.openai.com/docs/guides/fine-tuning) document. Have fun!
