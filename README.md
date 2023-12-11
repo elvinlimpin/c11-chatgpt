@@ -183,3 +183,8 @@ Refer to [Chat Completions API](https://platform.openai.com/docs/guides/text-gen
 
 ### Extra Spicy Challenge
 Want an extra challenge? Train your model to talk like a caveman, and make caveman analogies. Learn more on the [Fine Tuning API](https://platform.openai.com/docs/guides/fine-tuning) document. Have fun!
+
+# Further Reading
+* [Article on a Caveman Coding Assistant built using ChatGPT](https://medium.com/bacic/grug-dev-gpt-answers-most-popular-questions-on-stackoverflow-5c2b8dbc2394)
+* [Writing better prompts](https://www.promptingguide.ai/)
+* [AI Driven Development Masterclass](https://www.youtube.com/watch?v=iO1mwxPNP5A)
