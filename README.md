@@ -85,7 +85,7 @@ The above code is only an illustration--no need to use the above code for this t
 
 ## Exercise 1
 
-For Exercise 1, we will run the setup and test our integration to the ChatGPT API.
+For Exercise 1, we will run the setup and test our integration to the ChatGPT API. _There will be no dynamic user input yet_.
 
 ### File contents
 
@@ -161,7 +161,7 @@ _(Assistant output may vary)_
 
 ## Exercise 2
 
-Now that we are using the ChatGPT API, let's extend the app so that it takes user input. For Exercise 2, we will pass in code which we want ChatGPT to analyze.
+Now that we are using the ChatGPT API, let's _extend the app so that it takes user input_. For Exercise 2, we will pass in code which we want ChatGPT to analyze.
 
 ### Implementing user input
 
@@ -213,6 +213,8 @@ _(Assistant output may vary)_
 ## Exercise 3
 
 Passing in code as a string is only a small fraction of what you can do with the ChatGPT API as a coding assistant. Ideally, we want to be able to pass in file contents.
+
+The purpose of Exercise 3 is to be able to extend our integration in order to take advantage of the ChatGPT API beyond what is possible with the ChatGPT UI.
 
 ### Passing in sample code using fs
 
