@@ -48,7 +48,7 @@ Create your own key, or use the one provided to you.
 On the root directory of your project, create an `.env` file. Add the following contents:
 
 ```
-export OPENAI_API_KEY=<your api key here>
+OPENAI_API_KEY=<your api key here>
 ```
 
 replacing `<your api key here>` with your key.
