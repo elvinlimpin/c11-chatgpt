@@ -63,13 +63,10 @@ npm install openai
 npm install dotenv # allows your api key to be read
 ```
 
-Add the following line within `package.json`:
+Add the following line in the root object within `package.json`:
 
 ```
-{
-    ...
     "type": "module"
-}
 ```
 
 This allows you to use the import syntax present on the following section.
@@ -77,12 +74,13 @@ This allows you to use the import syntax present on the following section.
 ### Using the import
 
 Import the openai package using the following lines on a js file.
-
 ```
 import OpenAI from "openai"
 
 const openai = new OpenAI()
 ```
+The above code is only an illustration--no need to use the above code for this tutorial.
+
 [[Back to top](#ai-coding-assistant)]
 
 ## Exercise 1
@@ -163,7 +161,7 @@ _(Assistant output may vary)_
 
 ## Exercise 2
 
-Now that we have are using the ChatGPT API, let's extend the app so that it takes user input. For Exercise 2, we will pass in code which we want ChatGPT to analyze.
+Now that we are using the ChatGPT API, let's extend the app so that it takes user input. For Exercise 2, we will pass in code which we want ChatGPT to analyze.
 
 ### Implementing user input
 
